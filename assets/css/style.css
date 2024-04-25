@@ -64,6 +64,13 @@ p {
     align-items: center;
 }
 
+.mobile_logo {
+    width: 100%;
+    max-width: 210px;
+    height: 80px;
+    display: none;
+}
+
 .header_contact {
     display: flex;
     gap: 26px;
@@ -185,17 +192,13 @@ a.icon_cart:hover path {
     stroke: var(--theme-color-light);
 }
 
-.main_content {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-} 
-
-.main_content-img{
+.main_block {
     height: 724px;
     background-image: url(/assets/img/main_img.png);
     background-size: cover;
     position: relative;
     border-radius: 100px;
+    padding-top: 200px;
 }
 
 .main_content-title {
@@ -531,7 +534,7 @@ a.icon_cart:hover path {
     line-height: 24px;
     opacity: 0;
     height: 0;
-    transition: max-height 0.5s ease, opacity 0.9s ease;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
 }
 
 .about_flower:hover .description_flower {
@@ -771,10 +774,11 @@ a.icon_cart:hover path {
     transform: scale(1.2); /* Увеличиваем масштаб */
 }
 
-
-
-
-
+.social__link_item {
+    display: flex;
+    gap: 1rem;
+    margin-top: 16px;
+}
 
 /* АДАПТИВ */
 @media(max-width:2000px) {
@@ -798,7 +802,6 @@ a.icon_cart:hover path {
         grid-template-columns: repeat(2, 1fr);
     }
     .column-3 {
-  
         grid-template-columns: repeat(2, 1fr);
     }
 }
@@ -859,6 +862,84 @@ a.icon_cart:hover path {
     .column_choose {
         grid-template-columns: 1fr;
     }
+    .pic_title {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+    .column_choose_item:first-child {
+        text-align: unset;
+    }
+    .column_choose_item_item {
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+    }
+    .description_title {
+        margin-bottom: 32px;
+    }
+    .mobile_logo {
+        display: flex;
+        margin-bottom: 32px;
+    }
+    .header_top_inside {
+        padding: 64px 32px;
+    }
+    .header-adress:before { 
+        content: "";
+        width: 24px;
+        height: 24px;
+        display: flex;
+        background-image: url(/assets/img/svg/arcticons_magicpin.svg);
+        background-repeat: no-repeat;
+    }
+    .header_contact_mail:before { 
+        content: "";
+        width: 24px;
+        height: 24px;
+        display: flex;
+        background-image: url(/assets/img/svg/arcticons_mail.svg);
+        background-repeat: no-repeat;            
+    }
+    .header_contact_tel:before { 
+        content: "";
+        width: 24px;
+        height: 24px;
+        display: flex;
+        background-image: url(/assets/img/svg/arcticons_phone-alt.svg);
+        background-repeat: no-repeat; 
+    }
+    .header_top_inside {
+        flex-wrap: nowrap;
+        flex-direction: column;
+        align-items:unset;
+    }
+    .social_link {
+        flex-direction: column;
+        align-items:unset;
+    }
+    .header_contact {
+        flex-direction: column;
+    }
+    .header-adress {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        padding-bottom: 16px;
+    }
+    .header_contact_mail {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+    }
+    .header_contact_tel {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+    }
+    .header .header_top_inside {
+        display: none;
+    }
 }
 
 @media(max-width:750px) {
@@ -897,16 +978,98 @@ a.icon_cart:hover path {
     .block_padding_left {
     margin: 0;
     }
+    .logo_footer {
+        display: none;
+    }
+    .desc_footer {
+        display: none;
+    }
+    .footer_column_item:first-child {
+        order: 2;
+    }
+    .privacy {
+        margin-top: 16px;
+    }
+    .link_orange {
+        margin-top: 0;
+    }
+    .name_column_footer {
+        margin-bottom: 16px;
+    }
+}
+
+@media(max-width:600px) {
+    .nav_header {
+        display: none;
+    }
+    .main_header {
+        background-color: var(--bck-pink);
+    }
+    .icon_search, .icon_cart {
+        background-color: #fff;
+        width: 32px;
+        height: 32px;
+        border-radius: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .main_header {
+        padding: 10px;
+    }
+    .burger_mobile {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        background-color: #fff;
+        border-radius: 100px;
+        width: 32px;
+        height: 32px;
+        justify-content: center;
+        align-items: center;
+    }
+    .burger_mobile span {
+        background-color: var(--bck-orange);
+        width: 12px;
+        height: 1px;
+    }
+    .top_content_title {
+        font-size: 32px;
+        line-height: 32px;
+        margin-top: 16px;
+    }
+    .main_content-title {
+        justify-content: unset;
+    }
+    .star_span {
+        font-size: 16px;
+    }
+    .main_content-title {
+        border-radius: 0;
+    }
+    .main_block .container {
+        padding: 0 !important;
+    }
+    .main_content-title {
+        padding: 40px !important;
+    }
+    .main_block {
+        height: max-content;
+        padding-top: 64px;
+        border-radius:unset;
+    }
+    .btn_content {
+        flex-direction: column;
+    }
+    .btn_no_bck{
+        justify-content: center;
+    }
+    .btn_bck{
+        text-align: center;
+    }
 }
 
 @media(max-width:540px) {
-    .main_content-title {
-        background-image: url(/assets/img/main_img.png);
-        background-size: cover;
-        position: relative;
-        border-radius: 100px;
-        padding: 64px 0;
-    }
     .main_content-img {
         display: none;
     }
@@ -914,26 +1077,31 @@ a.icon_cart:hover path {
         flex-direction: column;
         width: 100%;
     }
-    .main_content {
-        display: flex;
-    }
     .btn_bck {
         text-align: center;
     }
     .btn_no_bck {
         text-align: center;
         width: 100%;
+        justify-content: center;
+    }
+    .header-adress:before{
+        width: 60px;
     }
 }
+
 @media(max-width:500px) {
     .header_top_inside  {
-       gap: 1rem;
+    gap: 1rem;
     }
     .column_choose {
         grid-template-columns: 1fr;
     }
     .title_w_circle {
         gap: 0;
+    }
+    .title_w_circle::before {
+        width: 60px;
     }
 }
 
