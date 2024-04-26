@@ -193,13 +193,18 @@ a.icon_cart:hover path {
 }
 
 .main_block {
-    height: 724px;
-    background-image: url(/assets/img/main_img.png);
-    background-size: cover;
-    position: relative;
-    border-radius: 100px;
-    padding-top: 200px;
+	height: 724px;
+	background-image: url(/assets/img/main_img.png);
+	background-size: cover;
+	position: relative;
+	border-radius: 100px;
+	padding-top: 200px;
+	background-position-x: 31rem;
+	background-repeat: no-repeat;
+	background-position-y: -8rem;
 }
+
+
 
 .main_content-title {
 	display: flex;
@@ -856,6 +861,11 @@ a.icon_cart:hover path {
         gap: 2rem;
         grid-template-columns: 1fr 1fr;
     }
+    .main_block {
+        background-position-x: 25rem;
+        background-position-y: -8rem;
+    }
+
 }
 
 @media(max-width:900px) {
@@ -960,6 +970,11 @@ a.icon_cart:hover path {
         gap: 1rem;
         align-items:unset;
     }
+    .main_block {
+        background-position-x: 15rem;
+        background-position-y: -8rem;
+    }
+
 }
 
 @media(max-width:700px) {
@@ -1067,6 +1082,15 @@ a.icon_cart:hover path {
     .btn_bck{
         text-align: center;
     }
+    .main_block {
+        background-image: url(/assets/img/main_img_mobile.png);
+        background-size: cover;
+        position: relative;
+        background-position-x: 31rem;
+        background-repeat: no-repeat;
+        background-position-y: -8rem;
+    
+}
 }
 
 @media(max-width:540px) {
@@ -1088,6 +1112,7 @@ a.icon_cart:hover path {
     .header-adress:before{
         width: 60px;
     }
+
 }
 
 @media(max-width:500px) {
@@ -1103,6 +1128,9 @@ a.icon_cart:hover path {
     .title_w_circle::before {
         width: 60px;
     }
+    .btn_bck {
+        padding: 16px 0px;
+    }
 }
 
 @media(max-width:440px) {
@@ -1110,5 +1138,23 @@ a.icon_cart:hover path {
         flex-direction: column;
         gap: 1rem;
     }
+    .main_block {
+        background-image: url(/assets/img/main_img_mobile.png);
+        background-size: 180px;
+        position: relative;
+        background-position-x: 15rem;
+        background-repeat: no-repeat;
+        background-position-y: 1rem;
+    }
 }
 
+@media(max-width:400px) {
+    .main_block {
+        background-image: url(/assets/img/main_img_mobile.png);
+        background-size: 228px;
+        position: relative;
+        background-position-x: 13rem;
+        background-repeat: no-repeat;
+        background-position-y: 1rem;
+    }
+}
